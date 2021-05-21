@@ -82,18 +82,18 @@ public class LinkedListAlgo {
     // 有序链表合并 Leetcode 21 
     /**
  	* Definition for singly-linked list.
- 	* public class ListNode {
+ 	* public class Node {
  	*     int val;
- 	*     ListNode next;
- 	*     ListNode(int x) { val = x; }
+ 	*     Node next;
+ 	*     Node(int x) { val = x; }
  	* }
 	*/
-   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode soldier = new ListNode(0); //利用哨兵结点简化实现难度 技巧三
-        ListNode p = soldier;
+   public Node mergeTwoLists(Node l1, Node l2) {
+        Node soldier = new Node(0); //利用哨兵结点简化实现难度 技巧三
+        Node p = soldier;
         
         while ( l1 != null && l2 != null ){
-            if ( l1.val < l2.val ){
+            if ( l1.data < l2.data ){
                 p.next = l1;
                 l1 = l1.next;
             }
@@ -172,6 +172,10 @@ public class LinkedListAlgo {
     public Node(int data, Node next) {
       this.data = data;
       this.next = next;
+    }
+
+    public Node(int data) {
+      this.data = data;
     }
 
     public int getData() {
